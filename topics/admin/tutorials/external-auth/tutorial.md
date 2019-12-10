@@ -41,7 +41,7 @@ For this exercise we will use a basic password file method for authenticating - 
 
 > ### {% icon hands_on %} Hands-on: Configuring everything
 >
-> 1. Edit your `galaxyservers` group variables file and update the main location block defined for serving galaxy. Add the parameters:
+> 1. Edit `templates/nginx/galaxy.j2` and update the main location block defined for serving galaxy. Add the parameters:
 >      - `auth_basic galaxy;`
 >      - `auth_basic_user_file /etc/nginx/passwd;`
 >      - `uwsgi_param HTTP_REMOTE_USER $reomte_user;`
