@@ -389,7 +389,7 @@ The configuration is quite simple thanks to the many sensible defaults that are 
 >    `galaxy_manage_paths`        | `true`                                    | Instruct thre role to create the needed directories.
 >    `galaxy_layout`              | `root-dir`                                | This enables the `galaxy_root` Galaxy deployment layout:all of the code, configuration, and data folders will live beneath `galaxy_root`.
 >    `galaxy_root`                | `/srv/galaxy`                             | This is the root of the Galaxy deployment.
->    `galaxy_user`                | `{name: galaxy, shell: /bin/bash}`        | The user that Galaxy will run as.
+>    `galaxy_user`                | `{name: galaxy, shell: /bin/bash, home: "{{ galaxy_root }}"}`        | The user that Galaxy will run as.
 >    `galaxy_commit_id`           | `release_19.05`                           | The git reference to check out, which in this case is the branch for Galaxy Release 19.05
 >    `galaxy_config_style`        | `yaml`                                    | We want to opt-in to the new style YAML configuration.
 >    `galaxy_force_checkout`      | `true`                                    | If we make any modifications to the Galaxy codebase, they will be removed. This way we know we're getting an unmodified Galaxy and no one has made any unexpected changes to the codebase.
@@ -436,7 +436,7 @@ The configuration is quite simple thanks to the many sensible defaults that are 
 >    > > galaxy_manage_paths: true
 >    > > galaxy_layout: root-dir
 >    > > galaxy_root: /srv/galaxy
->    > > galaxy_user: {name: galaxy, shell: /bin/bash}
+>    > > galaxy_user: {name: galaxy, shell: /bin/bash, home: "{{ galaxy_root }}"}
 >    > > galaxy_commit_id: release_19.05
 >    > > galaxy_config_style: yaml
 >    > > galaxy_force_checkout: true
